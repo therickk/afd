@@ -5,7 +5,7 @@
         "boton1":"Limpiar",
         "boton2":"Validar",
         "automata":"Automatas",
-        "comentario":"El caracter " ° " representa el vacio"
+        "comentario":"El caracter ' ° ' representa el vacio"
     },
     "en":{
         "palabra":"Word",
@@ -13,6 +13,6 @@
         "boton1":"clean up",
         "boton2":"validate",
         "automata":"Automata",
-        "comentario":"The character " ° " represents the void"
+        "comentario":"The character ' ° ' represents the void"
     }
 }
