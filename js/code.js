@@ -93,6 +93,9 @@ function limpiar(){
         
         if(vecnode[i]==3)
         data.nodes.update({id:3, label:'q3'});
+        
+        if(vecnode[i]==4)
+        data.nodes.update({id:4, label:'q4'});
 
         data.nodes.update({id: vecnode[i],
             color:{
