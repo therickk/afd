@@ -12,7 +12,7 @@
         "range":"+  speed  -",
         "boton1":"clean up",
         "boton2":"validate",
-        "automata":"Automata"
+        "automata":"Automata",
         "comentario":"The character " ° " represents the void"
     }
 }
