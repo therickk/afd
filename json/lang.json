@@ -1,0 +1,16 @@
+{
+    "es":{
+        "palabra":"Palabra",
+        "range":"+  Velocidad  -",
+        "boton1":"Limpiar",
+        "boton2":"Validar",
+        "automata":"Automatas"
+    },
+    "en":{
+        "palabra":"Word",
+        "range":"+  speed  -",
+        "boton1":"clean up",
+        "boton2":"validate",
+        "automata":"Automata"
+    }
+}
