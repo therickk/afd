@@ -162,7 +162,7 @@ function afd(pal,estado,aux){
                     if(estado =='q3'){
                         data.edges.update({id: 9,color:'red'});
                         vecedges.push(9);
-                        data.nodes.update({id: 4,color:'red'});
+                        data.nodes.update({id: 4,color:'red', label:'✗'});
                         vecnode.push(4);
                     }else{
                         data.edges.update({id: 11,color:'red'});
@@ -192,7 +192,7 @@ function afd(pal,estado,aux){
             }else{
                 return setTimeout(function(){ 
                     if(estado =='q2'){
-                        data.nodes.update({id: 4,color:'red'});
+                        data.nodes.update({id: 4,color:'red', label:'✗'});
                         vecnode.push(4)
                         data.edges.update({id: 7,color:'red'});
                         vecedges.push(7);
