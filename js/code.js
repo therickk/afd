@@ -111,6 +111,7 @@ function limpiar(){
     for(i=0;i<vecedges.length;i++){
         data.edges.update({id:vecedges[i], color:'gray'})
     }
+    $("#mensaje").void();
 }
 
 function reducirexprecion(palabra){
