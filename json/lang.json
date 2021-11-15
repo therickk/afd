@@ -6,7 +6,8 @@
         "boton2":"Validar",
         "automata":"Automatas",
         "comentario":"El caracter ' ° ' representa el vacio",
-        "mensaje": "Error en la palabra ingresada, intentelo denuevo"
+        "mensaje": "Error en la palabra ingresada, intentelo denuevo",
+        "validando": "validando: "
     },
     "en":{
         "palabra":"Word",
@@ -15,6 +16,7 @@
         "boton2":"validate",
         "automata":"Automata",
         "comentario":"The character ' ° ' represents the void",
-        "mensaje": "Error in the word entered, try again"
+        "mensaje": "Error in the word entered, try again",
+        "validando": "validating: "
     }
 }
