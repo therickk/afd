@@ -110,6 +110,7 @@ function limpiar(){
         data.edges.update({id:vecedges[i], color:'gray'})
     }
     $("#mensaje").text("");
+    $("#caracter").text("");
 }
 
 function reducirexprecion(palabra){
@@ -141,6 +142,7 @@ var pal;
 $("#submit").click(function(){
     pal = reducirexprecion($("#palabra").val());
     afd('q1',0);
+    $("#caracter").text("");
 });
 
 function leera(estado, aux){
@@ -219,6 +221,7 @@ function leerbc(estado,aux){
 
 function afd(estado,aux){
     try {
+    $("#caracter").text(pal.charAt(aux));
     if(pal.charAt(aux) != ''){
         if(pal.charAt(aux) == 'a'){
             leera(estado,aux);
