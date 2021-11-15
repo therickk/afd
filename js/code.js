@@ -1,7 +1,7 @@
 var error = "Error en la palabra ingresada, intentelo denuevo";
 
 $.getJSON('json/lang.json',function(json){
-    $('#lenguage').click(function(){
+    $('#lenguage').change(function(){
         let leng = $(this).val();
         $('.lang').each(function(index,value){
             if($(this).attr('key') == 'palabra'){
