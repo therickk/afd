@@ -92,18 +92,9 @@ var network = new vis.Network(container, data, options);
 function limpiar(){
     let i;
     for(i=0;i<vecnode.length;i++){
-        if(vecnode[i]==1)
-        data.nodes.update({id:1, label:'q1'});
         
-        if(vecnode[i]==2)
-        data.nodes.update({id:2, label:'q2'});
+        data.nodes.update({id:i, label:'q'+i});
         
-        if(vecnode[i]==3)
-        data.nodes.update({id:3, label:'q3'});
-        
-        if(vecnode[i]==4)
-        data.nodes.update({id:4, label:'q4'});
-
         data.nodes.update({id: vecnode[i],
             color:{
                 background: 'white',
@@ -157,7 +148,7 @@ function leera(estado, aux){
     if(estado =='q1' || estado =='q2'){
         setTimeout(function(){ 
             if(estado =='q1'){
-                data.nodes.update({id: 1,color:'red', label: 'inicio'});
+                data.nodes.update({id: 1,color:'red'});
                 vecnode.push(1)
                 data.edges.update({id: 5,color:'red'});
                 vecedges.push(5)
@@ -194,7 +185,7 @@ function leerbc(estado,aux){
     if(estado =='q1' || estado=='q3'){
         setTimeout(function(){ 
             if(estado =='q1'){
-                data.nodes.update({id: 1,color:'red', label:'inicio'});
+                data.nodes.update({id: 1,color:'red'});
                 vecnode.push(1)
                 data.edges.update({id: 6,color:'red'});
                 vecedges.push(6);
