@@ -227,8 +227,8 @@ function afd(estado,aux){
             leera(estado,aux);
         }else if(pal.charAt(aux) == 'b' || pal.charAt(aux) == 'c'){
             leerbc(estado,aux);
-        }else if(pal.charAt(0) == '°') {
-            data.nodes.update({id: 1,color:'green', label:'✓'}).try(console.error("no leyo"));
+        }else if(pal.charAt(0).charCodeAt() == 176) {
+            data.nodes.update({id: 1,color:'green', label:'✓'});
             vecnode.push(1);
             return;
         }else if(pal.charAt(aux) == '°') {
