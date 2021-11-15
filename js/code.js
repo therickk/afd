@@ -115,110 +115,129 @@ function limpiar(){
 }
 
 function reducirexprecion(palabra){
-    let aux,aux2,pal;
+    let aux,aux2,p;
     let cont,cont2;
-    pal=palabra;
-    for (let index = 0; index < pal.length; index++) {
-        if(pal.charAt(index)==pal.charAt(index+1)){
-           for (let index2 = index+2; index2 < pal.length; index2++){
-               if(pal.charAt(index)==pal.charAt(index2)){
+    p=palabra;
+    for (let index = 0; index < p.length; index++) {
+        if(p.charAt(index)==p.charAt(index+1)){
+           for (let index2 = index+2; index2 < p.length; index2++){
+               if(p.charAt(index)==p.charAt(index2)){
                    cont2=index2;
                }else{
                    break;
                }              
            }
             cont=index+1;
-            aux=pal.slice(0,cont);
+            aux=p.slice(0,cont);
             cont=index+3;
-            aux2=pal.slice(cont2,pal.length);
-            pal=aux+aux2;
+            aux2=p.slice(cont2,p.length);
+            p=aux+aux2;
 
         }
     }
-    return pal;
+    return p;
 }
 
+var pal;
 
+$("#submit").click(function(){
+    pal = reducirexprecion($("#palabra").val());
+    afd('q1',0);
+});
 
-
-function afd(pal,estado,aux){
+function leera(estado, aux){
     let vel =  $("#input3").val();
+    if(estado =='q1' || estado =='q2'){
+        setTimeout(function(){ 
+            if(estado =='q1'){
+                data.nodes.update({id: 1,color:'red', label: 'inicio'});
+                vecnode.push(1)
+                data.edges.update({id: 5,color:'red'});
+                vecedges.push(5)
+                data.nodes.update({id: 2,color:'red'});
+                vecnode.push(2);
+            }else{
+                data.edges.update({id: 8,color:'red'});
+                vecedges.push(8);
+            }
+            aux++;
+            afd('q2',aux); 
+        }, vel);
+        return true;
+    }else{
+        setTimeout(function(){
+            if(estado =='q3'){
+                data.edges.update({id: 9,color:'red'});
+                vecedges.push(9);
+                data.nodes.update({id: 4,color:'red'});
+                vecnode.push(4);
+            }else{
+                data.edges.update({id: 11,color:'red'});
+                vecedges.push(11);
+            }
+            aux++; 
+            afd('q4',aux); 
+        }, vel);
+        return false; 
+    }
+}
+
+function leerbc(estado,aux){
+    let vel =  $("#input3").val();
+    if(estado =='q1' || estado=='q3'){
+        setTimeout(function(){ 
+            if(estado =='q1'){
+                data.nodes.update({id: 1,color:'red', label:'inicio'});
+                vecnode.push(1)
+                data.edges.update({id: 6,color:'red'});
+                vecedges.push(6);
+                data.nodes.update({id: 3,color:'red'});
+                vecnode.push(3);
+            }else{
+                data.edges.update({id: 10,color:'red'});
+                vecedges.push(10);
+            }
+            aux++;
+            afd('q3',aux);
+        }, vel);
+        return true;
+    }else{
+        setTimeout(function(){ 
+            if(estado =='q2'){
+                data.nodes.update({id: 4,color:'red'});
+                vecnode.push(4)
+                data.edges.update({id: 7,color:'red'});
+                vecedges.push(7);
+            }else{
+                data.edges.update({id: 11,color:'red'});
+                vecedges.push(11);
+            }
+            aux++;
+            afd('q4',aux);
+        }, vel);
+        return false;
+    }
+}
+
+function afd(estado,aux){
+    try {
     if(pal.charAt(aux) != ''){
         if(pal.charAt(aux) == 'a'){
-            if(estado =='q1' || estado =='q2'){
-                return setTimeout(function(){ 
-                    if(estado =='q1'){
-                        data.nodes.update({id: 1,color:'red'});
-                        vecnode.push(1)
-                        data.edges.update({id: 5,color:'red'});
-                        vecedges.push(5)
-                        data.nodes.update({id: 2,color:'red'});
-                        vecnode.push(2);
-                    }else{
-                        data.edges.update({id: 8,color:'red'});
-                        vecedges.push(8);
-                    }
-                    aux++;
-                    afd(pal,'q2',aux); 
-                }, vel);
-            }else{
-                return setTimeout(function(){
-                    if(estado =='q3'){
-                        data.edges.update({id: 9,color:'red'});
-                        vecedges.push(9);
-                        data.nodes.update({id: 4,color:'red', label:'✗'});
-                        vecnode.push(4);
-                    }else{
-                        data.edges.update({id: 11,color:'red'});
-                        vecedges.push(11);
-                    }
-                    aux++; 
-                    afd(pal,'q4',aux); 
-                }, vel); 
-            }
+            leera(estado,aux);
         }else if(pal.charAt(aux) == 'b' || pal.charAt(aux) == 'c'){
-            if(estado =='q1' || estado=='q3'){
-                return setTimeout(function(){ 
-                    if(estado =='q1'){
-                        data.nodes.update({id: 1,color:'red'});
-                        vecnode.push(1)
-                        data.edges.update({id: 6,color:'red'});
-                        vecedges.push(6);
-                        data.nodes.update({id: 3,color:'red'});
-                        vecnode.push(3);
-                    }else{
-                        data.edges.update({id: 10,color:'red'});
-                        vecedges.push(10);
-                    }
-                    aux++;
-                    afd(pal,'q3',aux);
-                }, vel);
-            }else{
-                return setTimeout(function(){ 
-                    if(estado =='q2'){
-                        data.nodes.update({id: 4,color:'red', label:'✗'});
-                        vecnode.push(4)
-                        data.edges.update({id: 7,color:'red'});
-                        vecedges.push(7);
-                    }else{
-                        data.edges.update({id: 11,color:'red'});
-                        vecedges.push(11);
-                    }
-                    aux++;
-                    afd(pal,'q4',aux);
-                }, vel);
-            }
+            leerbc(estado,aux);
         }else if(pal.charAt(0) == '°') {
             data.nodes.update({id: 1,color:'green', label:'✓'}).try(console.error("no leyo"));
             vecnode.push(1);
             return;
         }else if(pal.charAt(aux) == '°') {
             aux++;
-            afd(pal,estado,aux);
+            afd(estado,aux);
             return;
         }
         else {
             $("#mensaje").text("El caracter '"+pal.charAt(aux)+"' no pertenece a este automata");
+            return;
         }
     }else{
         if(estado == 'q2' || estado == 'q3'){
@@ -233,10 +252,7 @@ function afd(pal,estado,aux){
         }
     }
     return;
+    }catch(e) {
+        $("#mensaje").text("Error en la palabra ingresada, intente de nuevo");
+    }
 }
-
-$("#submit").click(function(){
-    let pal = $("#palabra").val();
-    pal = reducirexprecion(pal);
-    afd(pal,'q1',0);
-});
