@@ -1,9 +1,17 @@
+var error = "Error en la palabra ingresada, intentelo denuevo";
+
 $.getJSON('json/lang.json',function(json){
     $('#lenguage').click(function(){
         let leng = $(this).val();
         $('.lang').each(function(index,value){
             if($(this).attr('key') == 'palabra'){
                 $(this).attr("placeholder", json[leng][$(this).attr('key')]);
+            }else if($(this).attr('key') == 'mensaje'){
+                if ($(this).val() != '') {
+                    $(this).text(json[leng][$(this).attr('key')]);
+                }else {
+                    error = json[leng][$(this).attr('key')];
+                }
             }else{
                 $(this).text(json[leng][$(this).attr('key')]);
             }
@@ -236,7 +244,7 @@ function afd(estado,aux){
             return;
         }
         else {
-            $("#mensaje").text("El caracter '"+pal.charAt(aux)+"' no pertenece a este automata");
+            $("#mensaje").text(error);
             return;
         }
     }else{
@@ -253,6 +261,6 @@ function afd(estado,aux){
     }
     return;
     }catch(e) {
-        $("#mensaje").text("Error en la palabra ingresada, intente de nuevo");
+        $("#mensaje").text(error);
     }
 }
