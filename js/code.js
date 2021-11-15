@@ -7,11 +7,10 @@ $.getJSON('json/lang.json',function(json){
             if($(this).attr('key') == 'palabra'){
                 $(this).attr("placeholder", json[leng][$(this).attr('key')]);
             }else if($(this).attr('key') == 'mensaje'){
-                if ($(this).val() != '') {
+                if ($(this).not(':empty')) {
                     $(this).text(json[leng][$(this).attr('key')]);
-                }else {
-                    error = json[leng][$(this).attr('key')];
                 }
+                error = json[leng][$(this).attr('key')];
             }else{
                 $(this).text(json[leng][$(this).attr('key')]);
             }
