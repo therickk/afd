@@ -92,7 +92,7 @@ var network = new vis.Network(container, data, options);
 function limpiar(){
     let i;
     for(i=0;i<vecnode.length;i++){
-        if(i!=0)
+        if (i > 0 &&  i < 5)
         data.nodes.update({id:i, label:'q'+i});
         
         data.nodes.update({id: vecnode[i],
