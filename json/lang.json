@@ -5,6 +5,7 @@
         "boton1":"Limpiar",
         "boton2":"Validar",
         "automata":"Automatas",
+        "comentario":"El caracter ' ° ' representa el vacio",
         "mensaje": "Error en la palabra ingresada, intentelo denuevo"
     },
     "en":{
@@ -13,6 +14,7 @@
         "boton1":"clean up",
         "boton2":"validate",
         "automata":"Automata",
+        "comentario":"The character ' ° ' represents the void",
         "mensaje": "Error in the word entered, try again"
     }
 }
