@@ -142,14 +142,13 @@ var pal;
 $("#submit").click(function(){
     pal = reducirexprecion($("#palabra").val());
     afd('q1',0);
-    $("#caracter").text("");
 });
 
 function leera(estado, aux){
     let vel =  $("#input3").val();
     if(estado =='q1' || estado =='q2'){
         setTimeout(function(){ 
-            if(estado =='q1'){
+            if(estado == 'q1'){
                 data.nodes.update({id: 1,color:'red'});
                 vecnode.push(1)
                 data.edges.update({id: 5,color:'red'});
