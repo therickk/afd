@@ -227,7 +227,7 @@ function afd(estado,aux){
             leera(estado,aux);
         }else if(pal.charAt(aux) == 'b' || pal.charAt(aux) == 'c'){
             leerbc(estado,aux);
-        }else if(pal.charAt(0).charCodeAt() == 176) {
+        }else if(pal.charAt(0).charCodeAt() == 176 && pal.charAt(1) == "") {
              data.nodes.update({id: 1,color:'green', label:'✓'});
              vecnode.push(1);
              return;  
